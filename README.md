@@ -1,4 +1,4 @@
-# Python - Introduction of mock module 
+# Python — Simple examples for mock module
 
 This article will bring you some simple examples for learning the mock module in unit tests.
 
