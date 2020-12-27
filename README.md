@@ -1,8 +1,11 @@
 # Python - Introduction of mock module 
 
+This article will bring you some simple examples for learning the mock module in unit tests.
+
 ### Date
 
 December 27, 2020 
+
 
 ## System environment
 
@@ -15,7 +18,7 @@ These days I was assigned a task to make the unit tests completed. To make the t
 
 ## What can mock module offer to you?
 
-It's a very useful tool that to cooperate with the unittest module. Assumed that you knew how to write unit tests. We write unit tests for each module to make sure they work perfectly. But sometimes some modules reply on others. We don't want to get over the scope of the module we want to test. Or it's difficult to trigger the special case to complete out tests. __Mock__ can help you a lot.  
+It's a very useful tool that to cooperate with the unittest module. Assumed that you knew how to write unit tests. We write unit tests for each module to make sure they work perfectly. But sometimes some modules rely on others. We don't want to get over the scope of the module we want to test. Or it's difficult to trigger the special case to complete out tests. __Mock__ can help you a lot.  [Download this code.](https://github.com/Jaimecclin/literate-lamp)
 
 ## Starting from the unit tests
 
@@ -123,7 +126,7 @@ class TestDemo(unittest.TestCase):
         mocked_mathod.assert_called_once_with()
 ```
 
-We can also make it raise an exception when the function is called. The assigned side_effect will be threw out so it can be caught.
+We can also make it raise an exception when the function is called. The assigned side_effect will be thrown out so it can be caught.
 
 ```python
 class TestDemo(unittest.TestCase):
@@ -155,7 +158,7 @@ class TestDemo(unittest.TestCase):
 The __patch__ decorator with arguments __src.demo.Bias__ would mock the Bias class until this function is ended. Therefore we can modify the returning value as we want.
 
 
-The Blow code snippet we mock datatime module. It shows the power of this module in writing tests. The datetime.today() gives a string "This is a mocked method" rather than the string of current time because we replace the function result.
+In the Blow code snippet, we mock the datatime module. It shows the power of this module in writing tests. The datetime.today() gives a string “This is a mocked method” rather than the string of current time because we replace the function result.
 
 ```python
 class TestDemo(unittest.TestCase):
@@ -173,6 +176,6 @@ class TestDemo(unittest.TestCase):
 ```
 
 
-Try to imagine that you have a module which needs to use the requests module to download files from network. But you don't want to waste time on downloading real files. In this case you could mock the requests module to simplify your testing. 
+Try to imagine that you have a module that needs to use the requests module to download files from the network. But you don’t want to waste time downloading real files. In this case, you could mock the requests module to simplify your testing.
 
 Simple is better.
